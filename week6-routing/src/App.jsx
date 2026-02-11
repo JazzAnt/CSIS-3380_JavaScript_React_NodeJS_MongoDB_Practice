@@ -15,6 +15,8 @@ import {
 } from "./components/pages";
 import Whoops404 from "./components/whoops404";
 
+//Remember to use BrowserRouter for the main.jsx
+
 // see navBarSimple.jsx for basics of routing
 function App() {
   return (
@@ -62,5 +64,18 @@ function App() {
     </div>
   );
 }
+
+/**
+ * Not depicted here but here's how you navigate using function calls (e.g. for buttons)
+ * import {useNavigate} from "react-router-dom"
+ * 
+ * //save the function into a const (must be at the root of the export {})
+ * const navigate = useNavigate()
+ * 
+ * then just call it
+ * navigate("/home")
+ * 
+ * check color-organizer addcolor.jsx for this in practice
+ */
 
 export default App;
