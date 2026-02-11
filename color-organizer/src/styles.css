@@ -1,0 +1,12 @@
+.colors {
+    display: flex;
+}
+
+.color {
+    margin: 1em;
+    padding: 1em;
+}
+
+div.color img {
+    margin: 20px;
+}
