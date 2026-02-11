@@ -1,0 +1,17 @@
+npm install ___
+then import them in the part of the app you want to use them
+or in main if you want to use them on the entire app e.g. bootstrap
+
+bootstrap
+import "bootstrap/dist/css/bootstrap.css"
+
+react-icons : icons
+import { whateverIcon } from "Fa6"
+
+uuid : generate custom ids
+import { v4 } from "uuid"
+
+react-router-dom : enables routing
+import { BrowserRouter } from "react-router-dom"
+
+query-string :
