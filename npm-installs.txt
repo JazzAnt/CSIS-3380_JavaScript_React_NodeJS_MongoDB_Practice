@@ -13,5 +13,8 @@ import { v4 } from "uuid"
 
 react-router-dom : enables routing
 import { BrowserRouter } from "react-router-dom"
+surround your <App/> with browserrouter on main.jsx
 
 query-string :
+import queryString from "query-string";
+queryString.parse("query params")

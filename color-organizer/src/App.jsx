@@ -11,6 +11,8 @@ import ColorList from "./components/colorList.jsx";
 //obtained from npm install uuid
 import { v4 } from "uuid";
 import "./styles.css";
+import NavBar from "./components/navbar.jsx";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [colors, setColors] = useState(colorData);
@@ -21,7 +23,9 @@ function App() {
   };
 
   const updateRating = (id, newRating) => {
-    console.log(`App.jsx function called with ${id} ID and ${newRating} rating`)
+    console.log(
+      `App.jsx function called with ${id} ID and ${newRating} rating`,
+    );
     const updatedColors = colors.map((color) =>
       color.id === id ? { ...color, rating: newRating } : color,
     );
@@ -45,12 +49,23 @@ function App() {
   return (
     <div>
       <Header title="My Color List" />
-      <AddColor onAddColor={addColor} />
-      <ColorList
-        colors={colors}
-        deleteColor={deleteColor}
-        updateRating={updateRating}
-      />
+      <NavBar />
+      <Routes>
+        <Route path="/addcolor" element={<AddColor onAddColor={addColor} />} />
+        <Route
+          path="/"
+          element={
+            <ColorList
+              colors={colors}
+              deleteColor={deleteColor}
+              updateRating={updateRating}
+            />
+          }
+        />
+
+        <Route path="*" element={<h1>Page not found</h1>} />
+      </Routes>
+
       <Footer />
     </div>
   );

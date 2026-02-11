@@ -1,15 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AddColor = ({onAddColor = (f) => f}) => {
+const AddColor = ({ onAddColor = (f) => f }) => {
   const [title, setTitle] = useState("");
   const [color, setColor] = useState("#000000");
 
+  //Save the useNavigate function as a const
+  const nav = useNavigate();
   const submitColor = (event) => {
     event.preventDefault(); //this prevents the event from sending data to the server, keep form local
     onAddColor(title, color);
     //after submitting the form, reset the input fields
     setTitle("");
     setColor("#000000");
+    //Navigate back to home after creating new color
+    nav("/");
   };
 
   return (
