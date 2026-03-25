@@ -1,13 +1,13 @@
 import express from "express";
 import { connectDB, disconnectDB } from "./config/db.js";
 import router from "./routes/booksRoutes.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public")); //for static files, put them in the public folder
-
-//app.use(cors()); 
+app.use(cors());
 
 /**
  * cross origin resource sharing, when trying to fetch a page from a different page
