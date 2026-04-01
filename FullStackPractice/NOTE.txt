@@ -1,0 +1,10 @@
+to run both server and client, see package.json
+
+1. npm init on the root folder
+2. npm install concurrently
+3. add these scripts:
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev"
+
+4. start both with npm run start or npm start
