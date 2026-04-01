@@ -1,6 +1,5 @@
 #stores stuff like credentials
 secrets/*
-atlas_uri.js
 
 # Logs
 logs
